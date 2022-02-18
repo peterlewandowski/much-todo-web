@@ -34,7 +34,7 @@ export default function TaskList() {
   return (
     <>
       <ul>
-        {tasks && tasks.map(singleTask => {
+        {tasks?.map(singleTask => {
             return (
                 <li>{singleTask.id} ------> {singleTask.task}</li>
             )
