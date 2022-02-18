@@ -23,23 +23,22 @@ export default function TaskList() {
   // tasks has all the data
 
   // we need to pass this TASKS => data to the list component
-  // return (
-  //     <List
-  //         bordered
-  //         dataSource={tasks}
-  //         renderItem={item => <Task item={item} />} // importing {item} from Task
-  //     />
-  // )
-
   return (
-    <>
-      <ul>
-        {tasks?.map(singleTask => {
-            return (
-                <li>{singleTask.id} ------> {singleTask.task}</li>
-            )
-        })}
-      </ul>
-    </>
+      <List
+          bordered
+          dataSource={tasks}
+          renderItem={item => <Task item={item} />} // importing {item} from Task
+      />
   )
 }
+
+//   return (
+//     <>
+//       <ul>
+//         {tasks?.map((singleTask) => {
+//           return <li key={singleTask.id}>{singleTask.task}</li>;
+//         })}
+//       </ul>
+//     </>
+//   );
+// }
