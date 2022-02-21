@@ -10,8 +10,7 @@ import Task from "./Task";
 //     { id: 5, task: 'Buy Paper Towels', done: false },
 // ]
 
-export default function TaskList() {
-  const [tasks, setTasks] = useState();
+export default function TaskList({ tasks, setTasks }) {
   useEffect(() => {
     // Get the data from the API
     fetch("https://much-todo-pl.uc.r.appspot.com/tasks")
@@ -24,11 +23,12 @@ export default function TaskList() {
 
   // we need to pass this TASKS => data to the list component
   return (
-      <List
-          bordered
-          dataSource={tasks}
-          renderItem={item => <Task item={item} />} // importing {item} from Task
-      />
+    <List
+      dataSource={tasks}
+      size="large"
+      bordered
+      renderItem={item => <Task item={item} />} // importing {item} from Task
+  />
   )
 }
 
