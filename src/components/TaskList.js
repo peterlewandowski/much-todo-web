@@ -27,7 +27,7 @@ export default function TaskList({ tasks, setTasks }) {
       dataSource={tasks}
       size="large"
       bordered
-      renderItem={item => <Task item={item} />} // importing {item} from Task
+      renderItem={item => <Task item={item} setTasks={setTasks} />} // importing {item} from Task
   />
   )
 }
