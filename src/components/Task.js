@@ -16,7 +16,7 @@ export default function Task ({ item, setTasks }) {
             headers: {
                 'Content-type': 'application/json'
             },
-            body: JSON.stringify({ isDone: !item.done })`
+            body: JSON.stringify({ isDone: !item.done })
         })
             .then(() => {
                 fetch('https://much-todo-pl.uc.r.appspot.com/tasks')
